@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     height: '80px',
     display: 'flex',
     justifyContent: ' space-between',
-    marginLeft: '240px',
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
       flexWrap: 'wrap',
@@ -19,6 +18,7 @@ export default makeStyles((theme) => ({
     },
   },
   drawer: {
+    marginLeft: '240px',
     [theme.breakpoints.down('sm')]: {
       width: drawerWidth,
       flexShrink: 0,

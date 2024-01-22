@@ -5,11 +5,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginLeft: ' 250px',
     overflow: 'auto',
     [theme.breakpoints.down('sm')]: {
       justifyContent: '',
-      marginLeft: -200,
+      marginLeft: -350,
 
     },
   },

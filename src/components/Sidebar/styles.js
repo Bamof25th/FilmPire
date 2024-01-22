@@ -12,10 +12,8 @@ export default makeStyles((theme) => ({
   links: {
     color: theme.palette.text.primary,
     textDecoration: 'none',
-
   },
   genereImage: {
     filter: theme.palette.mode === 'dark' ? 'dark' : 'invert(1)',
-
   },
 }));

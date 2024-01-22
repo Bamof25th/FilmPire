@@ -44,7 +44,7 @@ const Sidebar = ({ setMobileOpen }) => {
   const dispatch = useDispatch();
   console.log(genreIdOrCategoryName);
   return (
-    <>
+    <div className={classes.sidebar}>
       <Link to="/" className={classes.imageLink}>
         <img
           className={classes.image}
@@ -106,7 +106,7 @@ const Sidebar = ({ setMobileOpen }) => {
           ))
         )}
       </List>
-    </>
+    </div>
   );
 };
 
