@@ -27,7 +27,7 @@ const Profile = () => {
           add
         </Typography>
       ) : (
-        <Box>Favorite Movies</Box>
+        <Box sx={{ ml: -30 }}>Favorite Movies</Box>
       )}
     </Box>
   );

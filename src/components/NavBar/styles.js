@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
   toolbar: {
     height: '80px',
     display: 'flex',
+    marginLeft: 220,
     justifyContent: ' space-between',
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
@@ -20,6 +21,7 @@ export default makeStyles((theme) => ({
   drawer: {
     marginLeft: '240px',
     [theme.breakpoints.down('sm')]: {
+      marginLeft: '-240px',
       width: drawerWidth,
       flexShrink: 0,
     },
