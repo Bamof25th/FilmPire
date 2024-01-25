@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+    /* width of the entire scrollbar ================================ */
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    /* color of the track behind the handle, can be a color value or gradient */
+    background: #cfcfcf;
+}
+::-webkit-scrollbar-thumb {
+    /* color of the track behind the handle, can be a color value or gradient */
+    background: #a5a5a5;
+}
+
+* {
+    text-decoration: none;
+}

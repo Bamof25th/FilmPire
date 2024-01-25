@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   useHistory,
   useParams,
@@ -8,13 +8,14 @@ import { ArrowBack } from '@mui/icons-material';
 import { useGetActorsDetailsQuery, useGetMoviesByActorIdQuery } from '../../services/TMDB';
 import useStyles from './styles';
 import MovieList from '../MovieList/MovieList';
+import Pagination from '../Pagination/Pagination';
 
 const Actors = () => {
   const { id } = useParams();
   const { data, isFetching, error } = useGetActorsDetailsQuery(id);
   const classes = useStyles();
   const history = useHistory();
-  const page = 1;
+  const [page, setPage] = useState(1);
 
   const { data: movesByActor } = useGetMoviesByActorIdQuery({ id, page });
   if (isFetching) {
@@ -72,6 +73,7 @@ const Actors = () => {
           Movies
         </Typography>
         {movesByActor ? <MovieList movies={movesByActor} numberOfMovies={12} /> : 'Noob'}
+        <Pagination currentPage={page} setPage={setPage} totalPages={movesByActor?.total_pages} />
       </Box>
     </>
   );
