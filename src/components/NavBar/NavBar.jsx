@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   AppBar,
   IconButton,
@@ -22,6 +22,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Search from '../Search/Search.jsx';
 import { fetchToken, createSessionId, moviesApi } from '../../utils/Auth.js';
 import { setUser, userSelector } from '../../features/auth.js';
+import { ColorModeContext } from '../../utils/ToggleColorMode.jsx';
 
 const NavBar = () => {
   const { isAuthenticated, user } = useSelector(userSelector);
@@ -32,6 +33,7 @@ const NavBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const token = localStorage.getItem('request_token');
   const sessionIdFromLocalStorage = localStorage.getItem('session_id');
+  const colorMode = useContext(ColorModeContext);
   useEffect(() => {
     const logInUser = async () => {
       if (token) {
@@ -48,8 +50,6 @@ const NavBar = () => {
     logInUser();
   }, [token]);
 
-  console.log(user);
-
   return (
     <>
       <AppBar position="fixed">
@@ -65,7 +65,7 @@ const NavBar = () => {
               <Menu />
             </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
           {!isMobile && <Search />}
