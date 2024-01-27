@@ -12,8 +12,9 @@ export default makeStyles((theme) => ({
     color: theme.palette.mode === 'light' && 'black',
     filter: theme.palette.mode === 'light' && 'invert(1)',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-15px',
+      marginTop: '-10px',
       marginBottom: '10px',
+      marginLeft: '-20px',
     },
   },
 }));
