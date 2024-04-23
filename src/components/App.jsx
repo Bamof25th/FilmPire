@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Actors, Movies, Profile, NavBar, MovieInformation } from '.';
 import useStyles from './styles.js';
 import useAlan from '../Alan.jsx';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 const App = () => {
   const classes = useStyles();
@@ -16,7 +17,7 @@ const App = () => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path="/movie/:id">
+          <Route exact path="/movie/:id" errorElement={<ErrorBoundary />}>
             <MovieInformation />
           </Route>
           <Route exact path="/actors/:id">
