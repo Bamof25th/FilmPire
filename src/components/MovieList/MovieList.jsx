@@ -7,7 +7,7 @@ import Movie from '../Movie/Movie';
 const MovieList = ({ movies, numberOfMovies, excludeFirst }) => {
   const classes = useStyles();
   const startFrom = excludeFirst ? 1 : 0;
-  console.log(numberOfMovies);
+  // console.log(numberOfMovies);
   return (
     <Grid className={classes.moviesContainer}>
       {movies?.results.slice(startFrom, numberOfMovies).map((movie, i) => (
