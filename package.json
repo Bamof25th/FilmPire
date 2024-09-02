@@ -33,7 +33,7 @@
     "postcss": "^8.4.7"
   },
   "scripts": {
-    "run install": " install   --legacy-peer-deps ",
+    "install": " install   --legacy-peer-deps ",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
